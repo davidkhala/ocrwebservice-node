@@ -1,0 +1,7 @@
+{
+  "name": "ocrwebservice-node",
+  "version": "0.0.0",
+  "dependencies": {
+    "khala-axios": "latest"
+  }
+}
