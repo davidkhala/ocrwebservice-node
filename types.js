@@ -12,7 +12,61 @@ const OutputFormat = {
 	RTF: 'rtf',
 	text: 'txt',                // Plain Text
 }
+/**
+ * @enum {string}
+ */
+const RecognitionLanguage = {
+	English: 'english',
+	Indonesian: 'indonesian',
+	Afrikaans: 'afrikaans',
+	Italian: 'italian',
+	Albanian: 'albanian',
+	Japanese: 'japanese',
+	Basque: 'basque',
+	Korean: 'korean',
+	Brazilian: 'brazilian',
+	Latin: 'latin',
+	Bulgarian: 'bulgarian',
+	Latvian: 'latvian',
+	Byelorussian: 'byelorussian',
+	Lithuanian: 'lithuanian',
+	Catalan: 'catalan',
+	Macedonian: 'macedonian',
+	'zh-Hans': 'chinesesimplified', // Chinese Simplified
+	'zh-Hant': 'chinesetraditional',// Chinese Traditional
+	Malay: 'malay',
+	Moldavian: 'moldavian',
+	Croatian: 'croatian',
+	Norwegian: 'norwegian',
+	Czech: 'czech',
+	Polish: 'polish',
+	Danish: 'danish',
+	Portuguese: 'portuguese',
+	Dutch: 'dutch',
+	Romanian: 'romanian',
+	Esperanto: 'esperanto',
+	Russian: 'russian',
+	Estonian: 'estonian',
+	Serbian: 'serbian',
+	Finnish: 'finnish',
+	Slovak: 'slovak',
+	French: 'french',
+	Slovenian: 'slovenian',
+	Galician: 'galician',
+	Spanish: 'spanish',
+	German: 'german',
+	Swedish: 'swedish',
+	Greek: 'greek',
+	Tagalog: 'tagalog',
+	Hungarian: 'hungarian',
+	Turkish: 'turkish',
+	Icelandic: 'icelandic',
+	Ukrainian: 'Ukrainian'
+}
+
+
 module.exports = {
+	RecognitionLanguage,
 	OutputFormat,
 }
 /**

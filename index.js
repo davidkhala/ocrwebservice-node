@@ -1,5 +1,5 @@
 const {axiosPromise} = require('khala-axios')
-const {OutputFormat} = require('./types')
+const {OutputFormat, RecognitionLanguage} = require('./types')
 const fs = require('fs')
 /**
  *
@@ -7,11 +7,11 @@ const fs = require('fs')
  * @param username
  * @param license license code
  * @param {OutputFormat} outputformat
- * @param [language]
- * @param [pagerange]
+ * @param {RecognitionLanguage} [language]
+ * @param {Array|string} [pagerange]
  * @return {Promise<ProcessDocumentResponse>}
  */
-const processDocument = async (sourceImage, username, license, outputformat, {language = 'english', pagerange = 'allpages'} = {}) => {
+const processDocument = async (sourceImage, username, license, outputformat, {language = RecognitionLanguage.English, pagerange = 'allpages'} = {}) => {
 	const url = 'https://www.ocrwebservice.com/restservices/processDocument';
 	let _pagerange
 	if (Array.isArray(pagerange)) {
