@@ -1,13 +1,17 @@
 const {axiosPromise} = require('khala-axios')
 const {OutputFormat} = require('./types')
+const fs = require('fs')
 /**
  *
- * @param language
- * @param pagerange
+ * @param sourceImage image file path, which will be processed
+ * @param username
+ * @param license license code
  * @param {OutputFormat} outputformat
- * @return {Promise<void>}
+ * @param [language]
+ * @param [pagerange]
+ * @return {Promise<ProcessDocumentResponse>}
  */
-const processDocument = async ({language = 'english', pagerange = 'allpages', outputformat}) => {
+const processDocument = async (sourceImage, username, license, outputformat, {language = 'english', pagerange = 'allpages'} = {}) => {
 	const url = 'https://www.ocrwebservice.com/restservices/processDocument';
 	let _pagerange
 	if (Array.isArray(pagerange)) {
@@ -16,15 +20,18 @@ const processDocument = async ({language = 'english', pagerange = 'allpages', ou
 		_pagerange = pagerange
 	}
 
-	const body = {
+	const params = {
 		language,
 		pagerange: _pagerange,
 		outputformat: Array.isArray(outputformat) ? outputformat.join(',') : outputformat,
 		gettext: outputformat === OutputFormat.text,
 		newline: 1
 	}
-	const result = await axiosPromise({url, body})
-	console.log(result)
+
+	const body = fs.createReadStream(sourceImage);
+	const auth = {username, password: license};
+	const result = await axiosPromise({url, body}, {auth, params})
+	return result
 }
 module.exports = {
 	processDocument,

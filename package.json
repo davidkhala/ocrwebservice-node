@@ -3,5 +3,11 @@
   "version": "0.0.0",
   "dependencies": {
     "khala-axios": "latest"
+  },
+  "scripts": {
+    "test": "mocha test/test.js"
+  },
+  "devDependencies": {
+    "mocha": "latest"
   }
 }
