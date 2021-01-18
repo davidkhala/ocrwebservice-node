@@ -4,6 +4,7 @@
   "dependencies": {
     "khala-axios": "latest"
   },
+  "author": "David Liu <david-khala@hotmail.com>",
   "scripts": {
     "test": "mocha test/test.js"
   },
