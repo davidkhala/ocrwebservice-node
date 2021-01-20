@@ -1,5 +1,5 @@
 const {processDocument} = require('../index')
-const {OutputFormat, RecognitionLanguage} = require('../types')
+const {OutputFormat} = require('../types')
 const path = require('path')
 
 describe('processDocument', function () {
